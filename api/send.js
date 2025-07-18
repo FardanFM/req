@@ -10,11 +10,10 @@ export default async function handler(req, res) {
     return res.status(400).json({ message: 'Name and request are required' });
   }
 
-  // Ganti sesuai akun GitHub kamu
-  const repo = 'FardanFM'; // <--- username/repo
+  const repo = 'FardanFM';
   const file = 'pesan.json';
   const branch = 'main';
-  const token = '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'; // <--- Personal access token (repo scope)
+  const token = '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';
 
   const headers = {
     Authorization: `Bearer ${token}`,
