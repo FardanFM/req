@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VarShade | Owner Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <div class="logo-container">
+                <img src="https://files.catbox.moe/nr78y2.jpg" alt="VarShade Logo" class="logo">
+                <h1>VarShade</h1>
+            </div>
+            <div class="status-container">
+                <span id="currentTime"></span>
+            </div>
+        </header>
+
+        <nav class="sidebar" id="sidebar">
+            <button class="close-btn" id="closeBtn">❌</button>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+
+        <main id="dashboard">
+            <div id="loginForm" class="login-form">
+                <h2>Owner Login</h2>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Masukkan password">
+                </div>
+                <button type="button" id="loginBtn" class="submit-btn">Login</button>
+                <div id="loginError" class="error-message"></div>
+            </div>
+
+            <div id="dashboardContent" class="dashboard-content" style="display: none;">
+                <div class="dashboard-header">
+                    <h2>Request Dashboard</h2>
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <h3>Total Request</h3>
+                            <p id="totalRequests">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Request Hari Ini</h3>
+                            <p id="todayRequests">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Cari berdasarkan nama atau isi request...">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+
+                <div id="requestsContainer" class="requests-container">
+                    <!-- Request cards will be inserted here -->
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://instagram.com/fardannfm" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/FarXyz-ID" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://wa.me/6283891813151" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://tiktok.com/@var_prikitiw" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <p class="copyright">© 2025 VarShade. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <button class="theme-toggle" id="themeToggle">🌙</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

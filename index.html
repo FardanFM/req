@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VarShade | Request Fitur Bot WhatsApp</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <div class="logo-container">
+                <img src="https://files.catbox.moe/nr78y2.jpg" alt="VarShade Logo" class="logo">
+                <h1>VarShade</h1>
+            </div>
+            <div class="status-container">
+                <span id="currentTime"></span>
+                <span id="batteryStatus"><i class="fas fa-battery-three-quarters"></i> <span id="batteryLevel"></span>%</span>
+                <span id="chargingStatus"><i class="fas fa-bolt"></i></span>
+            </div>
+        </header>
+
+        <nav class="sidebar" id="sidebar">
+            <button class="close-btn" id="closeBtn">❌</button>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="owner.html"><i class="fas fa-lock"></i> Owner</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="hero">
+                <h2>Request Fitur Bot WhatsApp</h2>
+                <p class="tagline">Kirim ide dan request fitur bot WhatsApp kamu di sini, tanpa ribet!</p>
+                <p class="quote">"Kami menghargai setiap ide yang masuk. Bersama kita wujudkan fitur terbaik untuk semua pengguna."</p>
+            </div>
+
+            <form id="requestForm">
+                <div class="form-group">
+                    <label for="name">Nama Pengirim</label>
+                    <input type="text" id="name" name="name" required placeholder="Masukkan nama Anda">
+                </div>
+                <div class="form-group">
+                    <label for="request">Isi Request</label>
+                    <textarea id="request" name="request" required placeholder="Deskripsikan fitur yang Anda inginkan"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Kirim Request</button>
+            </form>
+
+            <div id="notification" class="notification"></div>
+        </main>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://instagram.com/fardannfm" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/FarXyz-ID" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://wa.me/6283891813151" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://tiktok.com/@var_prikitiw" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <p class="copyright">© 2025 VarShade. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <button class="theme-toggle" id="themeToggle">🌙</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
