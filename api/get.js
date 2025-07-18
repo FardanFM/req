@@ -3,9 +3,9 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  const repo = process.env.GITHUB_REPO;
-  const file = process.env.GITHUB_FILE || 'database.json';
-  const branch = process.env.GITHUB_BRANCH || 'main';
+  const repo = 'FardanFM/req';
+  const file = 'pesan.json' || 'database.json';
+  const branch = 'main' || 'main';
 
   const rawUrl = `https://raw.githubusercontent.com/${repo}/${branch}/${file}`;
 
