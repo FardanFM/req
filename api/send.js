@@ -10,10 +10,11 @@ export default async function handler(req, res) {
     return res.status(400).json({ message: 'Name and request are required' });
   }
 
-  const repo = process.env.GITHUB_REPO;
-  const file = process.env.GITHUB_FILE || 'pesan.json';
-  const branch = process.env.GITHUB_BRANCH || 'main';
-  const token = process.env.GITHUB_TOKEN;
+  // Ganti sesuai akun GitHub kamu
+  const repo = 'FardanFM'; // <--- username/repo
+  const file = 'pesan.json';
+  const branch = 'main';
+  const token = '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'; // <--- Personal access token (repo scope)
 
   const headers = {
     Authorization: `Bearer ${token}`,
@@ -24,7 +25,6 @@ export default async function handler(req, res) {
   const apiUrl = `https://api.github.com/repos/${repo}/contents/${file}`;
 
   try {
-    // 1. Fetch existing content
     const getRes = await fetch(`${apiUrl}?ref=${branch}`, { headers });
     const getData = await getRes.json();
 
@@ -37,7 +37,6 @@ export default async function handler(req, res) {
       sha = getData.sha;
     }
 
-    // 2. Append new entry
     const newEntry = {
       name,
       request,
@@ -49,7 +48,6 @@ export default async function handler(req, res) {
     const updatedData = [newEntry, ...existingData];
     const encoded = Buffer.from(JSON.stringify(updatedData, null, 2)).toString('base64');
 
-    // 3. Push to GitHub
     const putRes = await fetch(apiUrl, {
       method: 'PUT',
       headers,
@@ -61,9 +59,7 @@ export default async function handler(req, res) {
       }),
     });
 
-    if (!putRes.ok) {
-      throw new Error('Failed to update GitHub');
-    }
+    if (!putRes.ok) throw new Error('Failed to update GitHub');
 
     return res.status(200).json({ message: 'Request saved' });
   } catch (error) {
